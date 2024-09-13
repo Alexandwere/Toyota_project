@@ -31,18 +31,6 @@ public class Runner {
 
         Warehouse<Car> carWarehouse = new Warehouse<>();
         System.out.println(carWarehouse.getFreeSpace());
-        carWarehouse.addCar("Camry", camry1);
-        carWarehouse.addCar("Camry", camry2);
-        carWarehouse.addCar("Hiance", hiance);
-        carWarehouse.addCar("Camry", camry3);
-        carWarehouse.addCar("Solara", solara);
-        carWarehouse.addCar("Camry", camry4);
-
-        System.out.println(carWarehouse.getFreeSpace());
-        System.out.println(carWarehouse.getCountCamry());
-
-
-        System.out.println("________");
 
         camry1.onLamps();
         solara.coldWater();

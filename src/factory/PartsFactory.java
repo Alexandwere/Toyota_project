@@ -5,7 +5,7 @@ import enums.Country;
 import enums.WheelDiameter;
 
 public class PartsFactory extends Factory {
-    private Country country;
+    private final Country country;
 
     public PartsFactory(Country country) {
         this.country = country;
