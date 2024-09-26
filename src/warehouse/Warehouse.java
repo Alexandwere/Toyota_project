@@ -1,11 +1,10 @@
 package warehouse;
 
 import car.Car;
-import car.cabriolet.Solara;
+import car.lightCar.cabriolet.Solara;
 import car.cargo.Dyna;
 import car.cargo.Hiance;
 import car.lightCar.Camry;
-import enums.CarType;
 
 import java.util.ArrayList;
 import java.util.HashMap;

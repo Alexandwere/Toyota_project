@@ -1,4 +1,4 @@
-package car.cabriolet;
+package car.lightCar.cabriolet;
 
 import car.lightCar.LightCar;
 import carComponent.*;

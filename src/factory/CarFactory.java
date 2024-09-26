@@ -1,6 +1,6 @@
 package factory;
 
-import car.cabriolet.Solara;
+import car.lightCar.cabriolet.Solara;
 import car.cargo.Dyna;
 import car.cargo.Hiance;
 import car.lightCar.Camry;
@@ -12,28 +12,14 @@ import enums.WheelDiameter;
 import java.math.BigDecimal;
 
 public class CarFactory extends Factory {
+    private final double DYNA_CAPACITY = 2_000;
+    private final double DYNHIANCE_CAPACITY = 1_800;
 
     private final Country country;
 
     public CarFactory(Country country) {
         this.country = country;
     }
-
-//    private static String setColor() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите цвет машины!");
-//        String color = scanner.nextLine();
-//        scanner.close();
-//        return color;
-//    }
-//
-//    private static BigDecimal setPrice() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите цену");
-//        BigDecimal price = scanner.nextBigDecimal();
-//        scanner.close();
-//        return price;
-//    }
 
     public Camry createCamry(String color, BigDecimal price) {
 
@@ -80,7 +66,7 @@ public class CarFactory extends Factory {
                 PartsFactory.createEngine(),
                 PartsFactory.createElectric(),
                 price,
-                2_000, this.country);
+                DYNA_CAPACITY, this.country);
     }
 
     public Hiance createHiance(String color, BigDecimal price) {
@@ -96,7 +82,7 @@ public class CarFactory extends Factory {
                 PartsFactory.createEngine(),
                 PartsFactory.createElectric(),
                 price,
-                1_800, this.country);
+                DYNHIANCE_CAPACITY, this.country);
     }
 
     public Country getCountry() {

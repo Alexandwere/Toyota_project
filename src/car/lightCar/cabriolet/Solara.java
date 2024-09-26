@@ -1,4 +1,4 @@
-package car.cabriolet;
+package car.lightCar.cabriolet;
 
 import carComponent.*;
 import enums.Country;
