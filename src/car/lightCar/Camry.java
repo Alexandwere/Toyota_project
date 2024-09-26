@@ -15,4 +15,5 @@ public final class Camry extends LightCar {
         super(color, maxSpeed, transmission, isMoving, wheel1, wheel2, wheel3, wheel4, tank, lamps,
                 engine, electronics, price, hasCruiseControl, country);
     }
+
 }

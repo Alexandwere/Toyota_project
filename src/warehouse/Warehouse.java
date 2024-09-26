@@ -5,7 +5,9 @@ import car.cabriolet.Solara;
 import car.cargo.Dyna;
 import car.cargo.Hiance;
 import car.lightCar.Camry;
+import enums.CarType;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Warehouse <T extends Car> {
@@ -16,9 +18,13 @@ public class Warehouse <T extends Car> {
     private int countSolara;
     private int countDyna;
     private int countHiance;
-    HashMap<String, Car> wareHouse = new HashMap<>();
+    HashMap<Enum, ArrayList<T>> wareHouse = new HashMap<>(){};
 
-    public T addCar(String key, T car) throws NoSpaceException {
+    public HashMap<Enum, ArrayList<T>> getWareHouse() {
+        return wareHouse;
+    }
+
+    public T addCar(Enum key, T car) throws NoSpaceException {
         if (freeSpace <= 0) {
             throw new NoSpaceException();
         }
@@ -31,13 +37,15 @@ public class Warehouse <T extends Car> {
         } else if (car instanceof Hiance) {
             countHiance++;
         }
-        wareHouse.put(key, car);
+
+        wareHouse.get(key).add(car);
+
         freeSpace--;
         countCars++;
         return car;
     }
 
-    public T removeCar(String key, T car) {
+    public T removeCar(Enum key, T car) {
         if (car instanceof Camry) {
             countCamry--;
         } else if (car instanceof Solara) {
@@ -47,7 +55,7 @@ public class Warehouse <T extends Car> {
         } else if (car instanceof Hiance) {
             countHiance--;
         }
-        wareHouse.remove(key, car);
+        wareHouse.get(key).remove(car);
         freeSpace++;
         countCars--;
         return car;
@@ -72,4 +80,6 @@ public class Warehouse <T extends Car> {
     public int getCountHiance() {
         return countHiance;
     }
+
+
 }
